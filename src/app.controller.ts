@@ -1,4 +1,4 @@
-import { Controller, Get, Inject } from '@nestjs/common';
+import { Controller, Inject } from '@nestjs/common';
 import {
   ClientProxy,
   Ctx,
@@ -16,7 +16,7 @@ export class AppController {
   async simulateRequest() {
     const response = await firstValueFrom(this.client.send('abc', {}));
 
-    // where are headers
+    // where I can find response-header???
   }
 
   @MessagePattern('abc')
