@@ -10,6 +10,8 @@ import { AppController } from './app.controller';
         transport: Transport.NATS,
         options: {
           servers: ['nats://localhost:4222'],
+          queue: 'my-q',
+          name: 'client',
         },
       },
     ]),

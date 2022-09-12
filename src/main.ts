@@ -9,9 +9,11 @@ async function bootstrap() {
     transport: Transport.NATS,
     options: {
       servers: ['nats://localhost:4222'],
+      queue: 'my-q',
+      name: 'client',
     },
   });
 
-  await app.listen(3000);
+  await app.startAllMicroservices();
 }
 bootstrap();
